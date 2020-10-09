@@ -1,0 +1,549 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1C1C277024346240006D7F4E /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1C276F24346240006D7F4E /* Account.swift */; };
+		1C2D6BDB244A845800EB1D55 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2D6BDA244A845800EB1D55 /* Questions.swift */; };
+		1C3B847E2460FB0300A78DC8 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3B847D2460FB0300A78DC8 /* Protocols.swift */; };
+		1C6266A324368633006FCAD5 /* FirebaseDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6266A224368633006FCAD5 /* FirebaseDataModel.swift */; };
+		1C6266A524369165006FCAD5 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6266A424369165006FCAD5 /* ItemsViewController.swift */; };
+		1C6266A72436A2BA006FCAD5 /* ShoppingListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6266A62436A2BA006FCAD5 /* ShoppingListManager.swift */; };
+		1C648C2724332E07000588D2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C648C2624332E07000588D2 /* SettingsViewController.swift */; };
+		1C648C2924332E1D000588D2 /* ListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C648C2824332E1D000588D2 /* ListsViewController.swift */; };
+		1C838AD2248F5A6B00655318 /* logo1_resized.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C838AD1248F5A6B00655318 /* logo1_resized.png */; };
+		1C8E7A52247E1DF800272BEF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8E7A51247E1DF800272BEF /* Constants.swift */; };
+		1CD221842430258700312324 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD221832430258700312324 /* AppDelegate.swift */; };
+		1CD221862430258700312324 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD221852430258700312324 /* SceneDelegate.swift */; };
+		1CD221882430258700312324 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD221872430258700312324 /* ViewController.swift */; };
+		1CD2218B2430258700312324 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CD221892430258700312324 /* Main.storyboard */; };
+		1CD2218D2430258800312324 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CD2218C2430258800312324 /* Assets.xcassets */; };
+		1CD221902430258800312324 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CD2218E2430258800312324 /* LaunchScreen.storyboard */; };
+		1CD221AB2430269A00312324 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD221A32430269900312324 /* EmailViewController.swift */; };
+		1CD221AC2430269A00312324 /* UsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD221A42430269900312324 /* UsernameViewController.swift */; };
+		1CD221AD2430269A00312324 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD221A52430269900312324 /* LoginViewController.swift */; };
+		1CD221AE2430269A00312324 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD221A62430269A00312324 /* PasswordViewController.swift */; };
+		1CD221C22430547D00312324 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD221C12430547D00312324 /* ForgotPasswordViewController.swift */; };
+		1CE47AD624428BC900C44A07 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE47AD524428BC900C44A07 /* Manager.swift */; };
+		1CE47AD8244294B000C44A07 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE47AD7244294B000C44A07 /* ChangePasswordViewController.swift */; };
+		1CE47ADA244294D500C44A07 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE47AD9244294D500C44A07 /* HelpViewController.swift */; };
+		1CE47ADC244294ED00C44A07 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE47ADB244294ED00C44A07 /* AboutViewController.swift */; };
+		1CF26D562459278C00AE162E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CF26D552459278C00AE162E /* GoogleService-Info.plist */; };
+		48BFD98320EE1C4BDC26E3D4 /* Pods_ShopIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D24CDC6355AAFEA6AB9A28E4 /* Pods_ShopIt.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1CD221BE243033A200312324 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1C1C276F24346240006D7F4E /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		1C2D6BDA244A845800EB1D55 /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
+		1C3B847D2460FB0300A78DC8 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		1C6266A224368633006FCAD5 /* FirebaseDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDataModel.swift; sourceTree = "<group>"; };
+		1C6266A424369165006FCAD5 /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
+		1C6266A62436A2BA006FCAD5 /* ShoppingListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListManager.swift; sourceTree = "<group>"; };
+		1C648C2624332E07000588D2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		1C648C2824332E1D000588D2 /* ListsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsViewController.swift; sourceTree = "<group>"; };
+		1C838AD1248F5A6B00655318 /* logo1_resized.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo1_resized.png; sourceTree = "<group>"; };
+		1C8E7A51247E1DF800272BEF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1CD221802430258700312324 /* ShopIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CD221832430258700312324 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1CD221852430258700312324 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1CD221872430258700312324 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1CD2218A2430258700312324 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1CD2218C2430258800312324 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1CD2218F2430258800312324 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1CD221912430258800312324 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CD221A32430269900312324 /* EmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
+		1CD221A42430269900312324 /* UsernameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsernameViewController.swift; sourceTree = "<group>"; };
+		1CD221A52430269900312324 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1CD221A62430269A00312324 /* PasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
+		1CD221C12430547D00312324 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		1CE47AD524428BC900C44A07 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		1CE47AD7244294B000C44A07 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		1CE47AD9244294D500C44A07 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		1CE47ADB244294ED00C44A07 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		1CF26D552459278C00AE162E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C7433EA2D89A1CC77023F854 /* Pods-ShopIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShopIt.release.xcconfig"; path = "Target Support Files/Pods-ShopIt/Pods-ShopIt.release.xcconfig"; sourceTree = "<group>"; };
+		D24CDC6355AAFEA6AB9A28E4 /* Pods_ShopIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShopIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4D2E39BBECF878443E24F23 /* Pods-ShopIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShopIt.debug.xcconfig"; path = "Target Support Files/Pods-ShopIt/Pods-ShopIt.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1CD2217D2430258700312324 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48BFD98320EE1C4BDC26E3D4 /* Pods_ShopIt.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1C8E7A50247CF06500272BEF /* Sign Up */ = {
+			isa = PBXGroup;
+			children = (
+				1CD221A32430269900312324 /* EmailViewController.swift */,
+				1CD221A42430269900312324 /* UsernameViewController.swift */,
+				1CD221A62430269A00312324 /* PasswordViewController.swift */,
+			);
+			path = "Sign Up";
+			sourceTree = "<group>";
+		};
+		1CD221772430258700312324 = {
+			isa = PBXGroup;
+			children = (
+				1CD221822430258700312324 /* ShopIt */,
+				1CD221812430258700312324 /* Products */,
+				1CD221972430261300312324 /* Frameworks */,
+				E52E76F5E80864CCB16C687E /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		1CD221812430258700312324 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1CD221802430258700312324 /* ShopIt.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1CD221822430258700312324 /* ShopIt */ = {
+			isa = PBXGroup;
+			children = (
+				1CF26D552459278C00AE162E /* GoogleService-Info.plist */,
+				1CD221832430258700312324 /* AppDelegate.swift */,
+				1CD221852430258700312324 /* SceneDelegate.swift */,
+				1C8E7A51247E1DF800272BEF /* Constants.swift */,
+				1CE47AD524428BC900C44A07 /* Manager.swift */,
+				1C1C276F24346240006D7F4E /* Account.swift */,
+				1C6266A224368633006FCAD5 /* FirebaseDataModel.swift */,
+				1C6266A62436A2BA006FCAD5 /* ShoppingListManager.swift */,
+				1C2D6BDA244A845800EB1D55 /* Questions.swift */,
+				1C3B847D2460FB0300A78DC8 /* Protocols.swift */,
+				1CD221AF243026A600312324 /* ViewControllers */,
+				1CD2218C2430258800312324 /* Assets.xcassets */,
+				1CD221892430258700312324 /* Main.storyboard */,
+				1C838AD1248F5A6B00655318 /* logo1_resized.png */,
+				1CD2218E2430258800312324 /* LaunchScreen.storyboard */,
+				1CD221912430258800312324 /* Info.plist */,
+			);
+			path = ShopIt;
+			sourceTree = "<group>";
+		};
+		1CD221972430261300312324 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D24CDC6355AAFEA6AB9A28E4 /* Pods_ShopIt.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1CD221AF243026A600312324 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1CD221872430258700312324 /* ViewController.swift */,
+				1CD221A52430269900312324 /* LoginViewController.swift */,
+				1CD221C12430547D00312324 /* ForgotPasswordViewController.swift */,
+				1C8E7A50247CF06500272BEF /* Sign Up */,
+				1C648C2824332E1D000588D2 /* ListsViewController.swift */,
+				1C6266A424369165006FCAD5 /* ItemsViewController.swift */,
+				1C648C2624332E07000588D2 /* SettingsViewController.swift */,
+				1CE47AD7244294B000C44A07 /* ChangePasswordViewController.swift */,
+				1CE47AD9244294D500C44A07 /* HelpViewController.swift */,
+				1CE47ADB244294ED00C44A07 /* AboutViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E52E76F5E80864CCB16C687E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E4D2E39BBECF878443E24F23 /* Pods-ShopIt.debug.xcconfig */,
+				C7433EA2D89A1CC77023F854 /* Pods-ShopIt.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1CD2217F2430258700312324 /* ShopIt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1CD221942430258800312324 /* Build configuration list for PBXNativeTarget "ShopIt" */;
+			buildPhases = (
+				19FAD129F448571FC5B1341F /* [CP] Check Pods Manifest.lock */,
+				1CD2217C2430258700312324 /* Sources */,
+				1CD2217D2430258700312324 /* Frameworks */,
+				1CD2217E2430258700312324 /* Resources */,
+				1CD221BE243033A200312324 /* Embed Frameworks */,
+				48442B5AF2A31D9241973A99 /* [CP] Embed Pods Frameworks */,
+				D97A84477C3BA50486E321B3 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShopIt;
+			productName = ShopIt;
+			productReference = 1CD221802430258700312324 /* ShopIt.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1CD221782430258700312324 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Nathan Thimothe";
+				TargetAttributes = {
+					1CD2217F2430258700312324 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 1CD2217B2430258700312324 /* Build configuration list for PBXProject "ShopIt" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1CD221772430258700312324;
+			productRefGroup = 1CD221812430258700312324 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1CD2217F2430258700312324 /* ShopIt */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1CD2217E2430258700312324 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CD221902430258800312324 /* LaunchScreen.storyboard in Resources */,
+				1CD2218D2430258800312324 /* Assets.xcassets in Resources */,
+				1CF26D562459278C00AE162E /* GoogleService-Info.plist in Resources */,
+				1CD2218B2430258700312324 /* Main.storyboard in Resources */,
+				1C838AD2248F5A6B00655318 /* logo1_resized.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		19FAD129F448571FC5B1341F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ShopIt-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		48442B5AF2A31D9241973A99 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShopIt/Pods-ShopIt-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShopIt/Pods-ShopIt-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShopIt/Pods-ShopIt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D97A84477C3BA50486E321B3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShopIt/Pods-ShopIt-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShopIt/Pods-ShopIt-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShopIt/Pods-ShopIt-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1CD2217C2430258700312324 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CD221882430258700312324 /* ViewController.swift in Sources */,
+				1CD221AC2430269A00312324 /* UsernameViewController.swift in Sources */,
+				1C3B847E2460FB0300A78DC8 /* Protocols.swift in Sources */,
+				1C648C2924332E1D000588D2 /* ListsViewController.swift in Sources */,
+				1CE47ADC244294ED00C44A07 /* AboutViewController.swift in Sources */,
+				1C2D6BDB244A845800EB1D55 /* Questions.swift in Sources */,
+				1CD221AE2430269A00312324 /* PasswordViewController.swift in Sources */,
+				1CD221842430258700312324 /* AppDelegate.swift in Sources */,
+				1C6266A524369165006FCAD5 /* ItemsViewController.swift in Sources */,
+				1C6266A72436A2BA006FCAD5 /* ShoppingListManager.swift in Sources */,
+				1CE47AD624428BC900C44A07 /* Manager.swift in Sources */,
+				1C8E7A52247E1DF800272BEF /* Constants.swift in Sources */,
+				1CD221AB2430269A00312324 /* EmailViewController.swift in Sources */,
+				1CD221862430258700312324 /* SceneDelegate.swift in Sources */,
+				1CD221C22430547D00312324 /* ForgotPasswordViewController.swift in Sources */,
+				1CD221AD2430269A00312324 /* LoginViewController.swift in Sources */,
+				1C648C2724332E07000588D2 /* SettingsViewController.swift in Sources */,
+				1C6266A324368633006FCAD5 /* FirebaseDataModel.swift in Sources */,
+				1CE47AD8244294B000C44A07 /* ChangePasswordViewController.swift in Sources */,
+				1C1C277024346240006D7F4E /* Account.swift in Sources */,
+				1CE47ADA244294D500C44A07 /* HelpViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1CD221892430258700312324 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1CD2218A2430258700312324 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1CD2218E2430258800312324 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1CD2218F2430258800312324 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1CD221922430258800312324 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1CD221932430258800312324 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1CD221952430258800312324 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4D2E39BBECF878443E24F23 /* Pods-ShopIt.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 88QDM82772;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ShopIt",
+				);
+				INFOPLIST_FILE = ShopIt/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = NathanThimothe.ShopIt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1CD221962430258800312324 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7433EA2D89A1CC77023F854 /* Pods-ShopIt.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 88QDM82772;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ShopIt",
+				);
+				INFOPLIST_FILE = ShopIt/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = NathanThimothe.ShopIt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1CD2217B2430258700312324 /* Build configuration list for PBXProject "ShopIt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CD221922430258800312324 /* Debug */,
+				1CD221932430258800312324 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1CD221942430258800312324 /* Build configuration list for PBXNativeTarget "ShopIt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CD221952430258800312324 /* Debug */,
+				1CD221962430258800312324 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1CD221782430258700312324 /* Project object */;
+}

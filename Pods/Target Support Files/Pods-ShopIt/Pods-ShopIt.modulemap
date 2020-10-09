@@ -1,0 +1,6 @@
+framework module Pods_ShopIt {
+  umbrella header "Pods-ShopIt-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>744310677542-a0qportr4iv8oit91vrh3odi4amvpbot.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.744310677542-a0qportr4iv8oit91vrh3odi4amvpbot</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB5fMMKpdqWTp6mwZMIIlRPw_MK3eu3j2o</string>
+	<key>GCM_SENDER_ID</key>
+	<string>744310677542</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>NathanThimothe.ShopIt</string>
+	<key>PROJECT_ID</key>
+	<string>shop-it-5a8fd</string>
+	<key>STORAGE_BUCKET</key>
+	<string>shop-it-5a8fd.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:744310677542:ios:f3e48985ac9680c3da06e7</string>
+	<key>DATABASE_URL</key>
+	<string>https://shop-it-5a8fd.firebaseio.com</string>
+</dict>
+</plist>
