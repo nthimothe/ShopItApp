@@ -11,7 +11,9 @@ import Foundation
 struct Constants {
     struct General {
         static let DATE_FORMAT = "yyyy-MM-dd h:mm:ss a"
+        static let MAX_LEN = 32
     }
+    
     struct Storyboard {
         static let rootView = "rootView"
         static let welcomeViewController = "welcomeVC"

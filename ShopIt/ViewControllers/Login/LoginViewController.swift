@@ -21,94 +21,71 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FUIAuthDelegat
     @IBOutlet weak var forgotPasswordButton: UIButton!
     
     var username: String? {
-        get {
-            return usernameField.text?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
-        }
+        get { return usernameField.text?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() }
     }
     
     var password: String? {
-        get {
-            return passwordField.text
-        }
+        get { return passwordField.text }
     }
     
     var authUI : FUIAuth?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // set up text fields
         usernameField?.becomeFirstResponder()
         usernameField?.delegate = self
         passwordField?.delegate = self
         activityIndicator?.stopAnimating()
+        Stylist.style(button: loginButton, color: UIColor.link, titleColor: UIColor.white, borderColor: UIColor.link.cgColor)
         
+        // set up Firebase Auth
         authUI = FUIAuth.defaultAuthUI()
         authUI?.delegate = self
         let providers : [FUIAuthProvider] = [FUIGoogleAuth()]
         authUI?.providers = providers
     }
     
+    // If the login button is pressed, catch any errors and log in
+    @IBAction func loginWasPressed(_ sender: Any) { signIn(username: username!, password: password!) }
+
     
-    
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        return true
-    }
-    
-    // if the login button is pressed, catch any errors and log in
-    @IBAction func loginWasPressed(_ sender: Any) {
-        signIn(username: username!, password: password!)
-    }
-    
-    
-    
-    func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
-        // if there is no error...
-        if error == nil {
-            print("SUCCESSFULLY LOGGED IN!!!")
-        }
-        
-    }
-    // Log in with the username and password, optionally registering a user.
     func signIn(username: String, password: String) {
+        pageIsValid()
         setLoading(loading: true, activityIndicator: activityIndicator, textFields: [usernameField, passwordField], buttons: [loginButton,forgotPasswordButton])
         
         changeBorderColors(fields: [usernameField, passwordField], color: UIColor.gray)
         Auth.auth().signIn(withEmail: username, password: password) { (user, err) in
-   
             // if there is an error...
             if err != nil{
                 // Auth error: user already exists? Try logging in as that user.
                 print("\nLogin failed: \(String(describing: err))\n");
                 // UI Changes associated with incorrect fields
                 self.displayError(errorLabel: self.errorLabel, error: "Either the username or password provided is incorrect.", fields: [self.usernameField,self.passwordField])
-                // if there are no errors,
+            // if there are no errors,
             } else {
                 print("Firebase login succeeded as \(String(describing: Auth.auth().currentUser))!")
                 self.self.setLoading(loading: false, activityIndicator: self.activityIndicator, textFields: [self.usernameField, self.passwordField], buttons: [self.loginButton])
                 self.transitionToHome()
             }
-        } // CLOSE CLOSURE
+        }
         setLoading(loading: false, activityIndicator: activityIndicator, textFields: [usernameField, passwordField], buttons: [loginButton,forgotPasswordButton])
     }
     
     func transitionToHome() {
         let welcome = storyboard?.instantiateViewController(identifier: Constants.Storyboard.welcomeViewController)
-        
         view.window?.rootViewController = welcome
-        
         view.window?.makeKeyAndVisible()
     }
     
     // if there are no errors present on the page, return true, else false and display correct errors
-    func pageIsValid() -> Bool {
+    func pageIsValid() {
         if username!.isEmpty || password!.isEmpty{
             displayError(errorLabel: errorLabel, error: "Both fields are required.", fontSize: 17.0, fields: [usernameField,passwordField])
-            print("LoginViewController pageIsValid() is returning false: username field is empty and so was password.")
-            return false;
+            print("LoginViewController: username field or password field was empty")
         }
-        print("LoginViewController pageIsValid() is returning true")
-        return true
     }
-    
     
     
     /* DESCRIBING TEXTFIELD BEHAVIOR UPON USER INTERACTION */
@@ -121,9 +98,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FUIAuthDelegat
     
     // if user stops editing emailField
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if textField == passwordField {
-            _ = pageIsValid()
-        }
+        if textField == passwordField {  pageIsValid() }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

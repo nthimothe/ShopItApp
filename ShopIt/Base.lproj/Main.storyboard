@@ -15,27 +15,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="MlJ-qE-KEb">
-                                <rect key="frame" x="40" y="736" width="334" height="86"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="MlJ-qE-KEb">
+                                <rect key="frame" x="40" y="741" width="334" height="91"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwb-1L-1nd">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="33"/>
-                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="Login">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
+                                        <state key="normal" title="Login"/>
                                         <connections>
                                             <segue destination="Klb-MM-wwD" kind="show" id="PBf-Jk-IqR"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0k-aw-GmT">
-                                        <rect key="frame" x="0.0" y="53" width="334" height="33"/>
-                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="0.0" y="58" width="334" height="33"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="Sign Up">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
+                                        <state key="normal" title="Sign Up"/>
                                         <connections>
                                             <segue destination="z4O-F4-jCu" kind="show" id="fU1-z0-nzf"/>
                                         </connections>
@@ -61,7 +57,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="MlJ-qE-KEb" secondAttribute="bottom" constant="40" id="1d4-wr-Eln"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="MlJ-qE-KEb" secondAttribute="bottom" constant="30" id="1d4-wr-Eln"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3Re-Ie-Q03" secondAttribute="trailing" constant="142" id="Igh-6n-cdd"/>
                             <constraint firstItem="3Re-Ie-Q03" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="22" id="JSR-6e-SCb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MlJ-qE-KEb" secondAttribute="trailing" constant="40" id="KHs-8r-eWy"/>
@@ -76,6 +72,10 @@
                     <navigationItem key="navigationItem" title="Shop It!" id="JuR-9y-n6t">
                         <barButtonItem key="backBarButtonItem" title=" " id="e5O-Sz-TVg"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="loginButton" destination="nwb-1L-1nd" id="sE8-LC-Wla"/>
+                        <outlet property="signUpButton" destination="i0k-aw-GmT" id="1Vd-xt-Ib8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -881,10 +881,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="changeButtonWasPressed:" destination="5oe-Z0-0Hu" eventType="touchUpInside" id="5yY-6E-3nw"/>
-                                    <action selector="changePasswordButtonTapped:" destination="5oe-Z0-0Hu" eventType="touchUpInside" id="xli-A1-q7U"/>
-                                    <action selector="changePasswordWasPressed:" destination="5oe-Z0-0Hu" eventType="touchUpInside" id="D8H-mx-rpd"/>
-                                    <action selector="signUpWasPressed:" destination="G4z-q8-5Ll" eventType="touchUpInside" id="Kr9-tg-qEU"/>
+                                    <action selector="changeButtonWasPressed:" destination="5oe-Z0-0Hu" eventType="touchUpInside" id="dyL-8A-4CX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -914,6 +911,7 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="HhV-mF-mcg" id="5Va-oc-NVe"/>
+                        <outlet property="changePasswordButton" destination="EED-sI-XVF" id="WhU-9H-nVE"/>
                         <outlet property="confirmPasswordField" destination="OnM-pJ-Xgx" id="1fl-i3-Zij"/>
                         <outlet property="eightChars" destination="bLU-tB-ih2" id="gYF-rB-mtP"/>
                         <outlet property="errorLabel" destination="XS0-oR-3dQ" id="sSe-7G-ZFJ"/>
@@ -1004,6 +1002,6 @@
         <image name="person.crop.circle" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vzp-fy-r5c"/>
+        <segue reference="fU1-z0-nzf"/>
     </inferredMetricsTieBreakers>
 </document>

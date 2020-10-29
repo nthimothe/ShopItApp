@@ -25,6 +25,7 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate, UserE
         self.title = "Forgot Password"
         resetEmailField.becomeFirstResponder()
         resetEmailField.delegate = self
+        Stylist.style(button: resetButton, color: UIColor.link, titleColor: UIColor.white, borderColor: UIColor.link.cgColor)
     }
     /*
      Please enter the email that you remember signing up with to reset your password.
@@ -48,7 +49,6 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate, UserE
                 // display email sent alert
                 let alert = UIAlertController(title: "Email Sent!", message: "", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                
                 // pop this view controller from the navigation controller after 2 seocnds
                 self.present(alert, animated: true) {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -86,10 +86,6 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate, UserE
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: email)
     }
-    
-       
-
-    
  
     /* DESCRIBING TEXTFIELD BEHAVIOR UPON USER INTERACTION */
     // when user begins editing, change border color back to gray and remove any error message

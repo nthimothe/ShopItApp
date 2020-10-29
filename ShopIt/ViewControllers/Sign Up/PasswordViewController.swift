@@ -33,6 +33,7 @@ class PasswordViewController: UIViewController, UITextFieldDelegate, UserEditabl
     override func viewDidLoad() {
         super.viewDidLoad()
         errorLabel.text = ""
+        Stylist.style(button: signUpButton, color: UIColor.link, titleColor: UIColor.white, borderColor: UIColor.link.cgColor)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -71,11 +72,8 @@ class PasswordViewController: UIViewController, UITextFieldDelegate, UserEditabl
                 print("\nLogin failed: \(String(describing: error))\n");
                 
                 // UI Changes associated with incorrect fields
-                
                 self.displayError(errorLabel: self.errorLabel, error: "Either the username or password provided is incorrect.", fields: [self.passwordField])
- 
-            }
-            else {
+            } else {
                 print("Successfully creating user with Firebase!\n\temail: \(self.email)\n\tUser ID: \(String(describing: Auth.auth().currentUser?.uid))\n\n*******\n")
                 self.writeEmailToDatabase(self.revise(self.email))
                 self.transitionToHome()

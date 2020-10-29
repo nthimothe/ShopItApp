@@ -28,7 +28,7 @@ class ShoppingItem : Equatable, Comparable {
     }
     
     static func == (lhs: ShoppingItem, rhs: ShoppingItem) -> Bool {
-        return lhs.content == rhs.content
+        return lhs.parentAutoID == rhs.parentAutoID && lhs.autoID == rhs.autoID
     }
     
     static func > (lhs: ShoppingItem, rhs: ShoppingItem) -> Bool {
@@ -39,14 +39,14 @@ class ShoppingItem : Equatable, Comparable {
         return lhs.creationDate < rhs.creationDate
     }
     
-
-    
     func toDict() -> [String: String] {
         var dict : [String: String] = [:]
         dict["content"] = "\(self.content)"
         dict["creationDate"] = formatDate(self.creationDate)
         dict["dateModified"] = formatDate(self.dateModified)
         dict["isCompleted"] = "\(self.isCompleted)"
+        dict["parentAutoID"] = self.parentAutoID
+        dict["autoID"] = self.autoID
         return dict
     }
     
@@ -58,13 +58,12 @@ class ShoppingItem : Equatable, Comparable {
 
 
 
-class ShoppingList {
+class ShoppingList : Equatable {
     
     var name : String = ""
     var creationDate = Date()
     var dateModified = Date()
     var items = [ShoppingItem]()
-    var dictionary : [String: String] = [:]
     var autoID : String = ""
     
     func formatDate(_ date : Date) -> String {
@@ -80,7 +79,12 @@ class ShoppingList {
         dict["name"] = "\(self.name)"
         dict["creationDate"] = formatDate(self.creationDate)
         dict["dateModified"] = formatDate(self.dateModified)
+        dict["autoID"] = self.autoID
         return dict
+    }
+    /// Two ShoppingLists are equal if their autoIDs are equal
+    static func == (lhs: ShoppingList, rhs: ShoppingList) -> Bool {
+        return lhs.autoID == rhs.autoID
     }
     
     func dump_list() -> String {

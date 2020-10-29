@@ -36,6 +36,7 @@ class ChangePasswordViewController: ViewController, UITextFieldDelegate, UserEdi
         passwordField.delegate = self
         confirmPasswordField.delegate = self
         errorLabel.text = ""
+        Stylist.style(button: changePasswordButton, color: UIColor.link, titleColor: UIColor.white, borderColor: UIColor.link.cgColor)
     }
 
     

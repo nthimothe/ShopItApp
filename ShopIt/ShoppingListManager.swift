@@ -14,10 +14,10 @@ class ShoppingListManager : NSObject {
     
     static let sharedManager = ShoppingListManager()
     var ref : DatabaseReference?
-    let user : User? = Auth.auth().currentUser
     
     private override init() {
         super.init()
+        let user = Auth.auth().currentUser
         ref = Database.database().reference().child("users").child(user!.uid)
     }
     
@@ -29,7 +29,11 @@ class ShoppingListManager : NSObject {
      */
     
     
-    // add a ShoppinsgList to Google's Firebase as JSON Object
+    /**
+    Adds a ShoppingList to Firebase db
+    - Parameters:
+        - list : ShoppingList object that will be added to db
+    */
     func addShoppingList(list : ShoppingList) {
         guard let key = ref?.child("lists").childByAutoId().key else { return }
         list.autoID = key
@@ -38,8 +42,13 @@ class ShoppingListManager : NSObject {
     }
     
     
-    // delete a ShoppingList from Firebase database and all of its children
+    /**
+    Deletes a ShoppingList from Firebase db and all of its children (all ShoppingItem's that belong to that list)
+    - Parameters:
+        - shoppingList : ShoppingList object that will be completely removed from database
+    */
     func deleteShoppingList(shoppingList : ShoppingList) {
+        // delete shopping list data
         let itemsRef = self.ref?.child("items").child(shoppingList.autoID)
         itemsRef?.removeValue { error, _ in
             if error != nil {
@@ -48,7 +57,7 @@ class ShoppingListManager : NSObject {
                 print("Successfully deleted all items belong to list...")
             }
         }
-        
+        // delete shopping list children data
         let listRef = self.ref?.child("lists").child(shoppingList.autoID)
         listRef?.removeValue { error, _ in
             if error != nil {
@@ -58,18 +67,17 @@ class ShoppingListManager : NSObject {
                 print("Successfully deleted list")
             }
         }
-        
     }
     
-    // change the name of a ShoppingLsit and update its dateModified
-    func renameShoppingList(shoppingList : ShoppingList, newName : String) {
-        // make changes to object
-        shoppingList.name = newName
-        shoppingList.dateModified = Date()
+    /**
+    Renames shoppingList in db and updates its dateModified in db
+    - Parameters:
+        - shoppingList : renamed shoppingList
+    */
+    func renameShoppingList(shoppingList : ShoppingList) {
         // make changes to database
         self.ref!.child("lists/\(shoppingList.autoID)").child("name").setValue(shoppingList.name)
         
-        // change the shoppingList's datemModified
         self.ref!.child("lists/\(shoppingList.autoID)").child("dateModified").setValue(shoppingList.formatDate(shoppingList.dateModified))
         print("Successfully renamed shopping list and updated date modified \n")
     }
@@ -82,21 +90,26 @@ class ShoppingListManager : NSObject {
      */
     
     
-    // add a ShoppingItem to Google's Firebase as JSON Object
-    func addShoppingItem(shoppingList : ShoppingList, item : ShoppingItem) {
-        // insert the most recently created object to the beginning of the list
-        shoppingList.items.insert(item, at: 0)
+    /**
+    Adds a ShoppingItem to Firebase db
+      - Parameters:
+          - item : ShoppingItem object that will be added to db
+    */
+    func addShoppingItem(item : ShoppingItem) {
         guard let key = ref?.child("lists").childByAutoId().key else { return }
         item.autoID = key
-        self.ref!.child("items/\(shoppingList.autoID)/").child(key).setValue(item.toDict())
+        self.ref!.child("items/\(item.parentAutoID)/").child(key).setValue(item.toDict())
         print("Successfully added shopping item \n")
     }
     
     
-    // delete a shoppingItem from Firebase
-    func deleteShoppingItem(shoppingList: ShoppingList, index: Int) {
-        let item = shoppingList.items.remove(at: index)
-        let reference = self.ref?.child("items").child(shoppingList.autoID).child(item.autoID)
+    /**
+    Deletes a ShoppingItem from db
+    - Parameters:
+        - shoppingItem : shoppingItem object that will be completely removed from database
+    */
+    func deleteShoppingItem(item : ShoppingItem) {
+        let reference = self.ref?.child("items").child(item.parentAutoID).child(item.autoID)
         reference?.removeValue { error, _ in
             if let err = error {
                 print(err.localizedDescription)
@@ -106,27 +119,36 @@ class ShoppingListManager : NSObject {
         }
     }
     
-    // change the content of a ShoppingItem and update its access date
-    func renameShoppingItem(shoppingList: ShoppingList, index : Int, content: String) {
-        let item = shoppingList.items[index]
-        item.content = content
-        item.dateModified = Date()
-        print(item.dump_item())
+    /**
+    Writes shoppingItem's date to db
+        - Parameters:
+            - shoppingItem : shoppingItem object
+    */
+    func updateDateModified(item: ShoppingItem){
+        self.ref!.child("items/\(item.parentAutoID)").child(item.autoID).child("dateModified").setValue("\(item.formatDate(item.dateModified))")
+    }
+    
+    /**
+    Renames shoppingItem in db and updates its dateModified in db
+     - Parameters:
+         - shoppingItem : renamed ShoppingItem
+    */
+    func renameShoppingItem(item: ShoppingItem) {
         // persist changes to firebase
-    self.ref!.child("items/\(shoppingList.autoID)").child(item.autoID).child("dateModified").setValue("\(item.formatDate(item.dateModified))")
-        self.ref!.child("items/\(shoppingList.autoID)").child(item.autoID).child("content").setValue("\(item.content)")
+        updateDateModified(item: item)
+        self.ref!.child("items/\(item.parentAutoID)").child(item.autoID).child("content").setValue("\(item.content)")
         print("Successfully updated item and updated date last modified\n")
     }
     
-    // mark item as either completed or not and update its access date
-    func markItem(shoppingList: ShoppingList, index: Int, isCompleted : Bool) {
-        let item = shoppingList.items[index]
-        item.dateModified = Date()
-        item.isCompleted = isCompleted
-        
-        // persist changes to firebase
-        self.ref!.child("items/\(shoppingList.autoID)").child(item.autoID).child("dateModified").setValue("\(item.formatDate(item.dateModified))")
-        self.ref!.child("items/\(shoppingList.autoID)").child(item.autoID).child("isCompleted").setValue("\(isCompleted)")
+    /**
+    Updates shoppingItem's isCompleted field in db and updates its dateModified in db
+      - Parameters:
+          - shoppingItem :ShoppingItem with new isCompleted flag
+     */
+    func markItem(item: ShoppingItem) {
+        // persist changes to db
+        updateDateModified(item: item)
+        self.ref!.child("items/\(item.parentAutoID)").child(item.autoID).child("isCompleted").setValue("\(item.isCompleted)")
         print("Successfully marked item and updated date last modified\n")
     }
  
@@ -138,6 +160,12 @@ class ShoppingListManager : NSObject {
         * * * * * * * * * * * * *
     */
     
+    /**
+     Deletes all info related for a given user from db
+     - Parameters:
+         - email : user's email
+         - uid: user's unique ID
+    */
     func deleteAllInfo(email: String, uid : String) {
         Database.database().reference().child("usernames").child(email).removeValue { error, _ in
             if let err = error {

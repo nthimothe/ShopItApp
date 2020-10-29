@@ -23,12 +23,12 @@ class EmailViewController: UIViewController, UITextFieldDelegate, UserEditable{
     override func viewDidLoad() {
         super.viewDidLoad()
         errorLabel.text = ""
+        Stylist.style(button: nextButton, color: UIColor.link, titleColor: UIColor.white, borderColor: UIColor.link.cgColor)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         emailField.becomeFirstResponder()
         emailField.delegate = self
-
     }
     
     // shouldPerformSegue should depend on whether there are no errors on the page
@@ -51,8 +51,9 @@ class EmailViewController: UIViewController, UITextFieldDelegate, UserEditable{
         // get reference to databse
         let ref = Database.database().reference().child("usernames")
         // remove forbidden characters from email
+        print("email: \(email)")
         let revisedEmail = revise(email)
-        
+         print("revised email : \(email)")
         
         // observeSingleEvent is an async provess
         // check if there is a user registered with the given email, return true if so
