@@ -69,7 +69,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Shop It!" id="JuR-9y-n6t">
+                    <navigationItem key="navigationItem" title="ShopIt!" id="JuR-9y-n6t">
                         <barButtonItem key="backBarButtonItem" title=" " id="e5O-Sz-TVg"/>
                     </navigationItem>
                     <connections>
