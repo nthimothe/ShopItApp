@@ -1,6 +1,6 @@
-# ShopIt
+# ShopIt!
 
-ShopIt is a simple iOS app (created for iOS 13+ and iPhone X+) that allows a user to keep track of their quotidian shopping lists across iOS devices.
+ShopIt! is a simple iOS app (created for iOS 13+ and iPhone X+) that allows a user to keep track of their quotidian shopping lists across iOS devices.
 
 ## Running the App
 
