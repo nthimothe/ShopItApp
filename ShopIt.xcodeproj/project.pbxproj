@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C217159254FA3DB00329EA8 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C217158254FA3DB00329EA8 /* Utilities.swift */; };
 		1C2D6BDB244A845800EB1D55 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2D6BDA244A845800EB1D55 /* Questions.swift */; };
 		1C3B847E2460FB0300A78DC8 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3B847D2460FB0300A78DC8 /* Protocols.swift */; };
 		1C6266A324368633006FCAD5 /* FirebaseDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6266A224368633006FCAD5 /* FirebaseDataModel.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1C217158254FA3DB00329EA8 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		1C2D6BDA244A845800EB1D55 /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 		1C3B847D2460FB0300A78DC8 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		1C6266A224368633006FCAD5 /* FirebaseDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDataModel.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				1CE47AD524428BC900C44A07 /* Manager.swift */,
 				1C8E7A51247E1DF800272BEF /* Constants.swift */,
 				1C656C7425364F02007F2E42 /* Stylist.swift */,
+				1C217158254FA3DB00329EA8 /* Utilities.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -160,11 +163,10 @@
 			isa = PBXGroup;
 			children = (
 				1C656C7325364E80007F2E42 /* Helpers */,
-				1CF26D552459278C00AE162E /* GoogleService-Info.plist */,
 				1CD221832430258700312324 /* AppDelegate.swift */,
 				1CD221852430258700312324 /* SceneDelegate.swift */,
-				1C6266A224368633006FCAD5 /* FirebaseDataModel.swift */,
 				1C6266A62436A2BA006FCAD5 /* ShoppingListManager.swift */,
+				1C6266A224368633006FCAD5 /* FirebaseDataModel.swift */,
 				1C2D6BDA244A845800EB1D55 /* Questions.swift */,
 				1C3B847D2460FB0300A78DC8 /* Protocols.swift */,
 				1CD221AF243026A600312324 /* ViewControllers */,
@@ -172,6 +174,7 @@
 				1CD221892430258700312324 /* Main.storyboard */,
 				1C838AD1248F5A6B00655318 /* logo1_resized.png */,
 				1CD2218E2430258800312324 /* LaunchScreen.storyboard */,
+				1CF26D552459278C00AE162E /* GoogleService-Info.plist */,
 				1CD221912430258800312324 /* Info.plist */,
 			);
 			path = ShopIt;
@@ -352,6 +355,7 @@
 				1C6266A72436A2BA006FCAD5 /* ShoppingListManager.swift in Sources */,
 				1CE47AD624428BC900C44A07 /* Manager.swift in Sources */,
 				1C8E7A52247E1DF800272BEF /* Constants.swift in Sources */,
+				1C217159254FA3DB00329EA8 /* Utilities.swift in Sources */,
 				1CD221AB2430269A00312324 /* EmailViewController.swift in Sources */,
 				1CD221862430258700312324 /* SceneDelegate.swift in Sources */,
 				1CD221C22430547D00312324 /* ForgotPasswordViewController.swift in Sources */,

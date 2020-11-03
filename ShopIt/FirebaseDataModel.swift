@@ -9,7 +9,7 @@
 import Foundation
 
 
-class ShoppingItem : Equatable, Comparable {
+class ShoppingItem : Equatable, Comparable, Codable {
     
     
     var content : String = ""
@@ -58,7 +58,7 @@ class ShoppingItem : Equatable, Comparable {
 
 
 
-class ShoppingList : Equatable {
+class ShoppingList : Equatable, Codable {
     
     var name : String = ""
     var creationDate = Date()
@@ -92,6 +92,7 @@ class ShoppingList : Equatable {
         for item in items{ s += "\titem: \(item.toDict())\n" }
         return s
     }
+    
     
 }
 

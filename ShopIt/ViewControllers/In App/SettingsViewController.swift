@@ -99,8 +99,8 @@ class SettingsViewController: UITableViewController {
                 }
                 // if there is no error, instantiate the root view controller
                 else {
-                    var email = user?.email
-                    print("email : \(email)")
+                    let email = user?.email
+                    print("email : \(email!)")
                     ShoppingListManager.sharedManager.deleteAllInfo(email: self.revise(email ?? ""), uid : user!.uid)
                     self.transitionToRoot()
                 }

@@ -624,6 +624,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <gestureRecognizers/>
                                 <connections>
                                     <segue destination="A9e-fL-MPt" kind="show" id="Xi7-M3-sEC"/>
                                 </connections>
@@ -635,8 +636,14 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Lists" image="house.fill" catalog="system" id="Kji-ZE-Od2"/>
-                    <navigationItem key="navigationItem" title="Shopping Lists" id="lag-7A-JvU">
+                    <navigationItem key="navigationItem" title="Shopping Lists" leftItemsSupplementBackButton="YES" id="lag-7A-JvU">
                         <barButtonItem key="backBarButtonItem" title="  " id="NdS-YG-Wb6"/>
+                        <barButtonItem key="leftBarButtonItem" image="trash" catalog="system" id="Nsd-jR-Glo">
+                            <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="deleteAllWasPressed:" destination="oM7-A0-NQf" id="1fr-4r-3GO"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fTX-aF-hcZ">
                             <connections>
                                 <action selector="addWasPressed:" destination="oM7-A0-NQf" id="fug-wF-mDh"/>
@@ -1000,6 +1007,7 @@
         <image name="house.fill" catalog="system" width="64" height="52"/>
         <image name="person.circle" catalog="system" width="64" height="60"/>
         <image name="person.crop.circle" catalog="system" width="64" height="60"/>
+        <image name="trash" catalog="system" width="60" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fU1-z0-nzf"/>

@@ -30,7 +30,7 @@ class HelpViewController: ViewController {
         // attributed text
         let attrText : NSMutableAttributedString = NSMutableAttributedString()
         // traverse the questions and answers arrays at the same time
-        for index in 0...Questions.QUESTIONS.count-1 {
+        for index in 0 ..< Questions.QUESTIONS.count {
             // define question
             let question = Questions.QUESTIONS[index]
             // format the question

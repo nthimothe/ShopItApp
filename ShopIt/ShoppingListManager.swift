@@ -82,6 +82,20 @@ class ShoppingListManager : NSObject {
         print("Successfully renamed shopping list and updated date modified \n")
     }
     
+    /**
+    Delete all shopping lists (and items) for a given user in db
+     */
+    func deleteAllShoppingLists(){
+        self.ref!.removeValue { error, _ in
+            if let err = error {
+                print(err.localizedDescription)
+            } else {
+                print("Successfully deleted user's information from database")
+            }
+        }
+    }
+
+    
     /* * * * * * * * * * * * *
      *                       *
      * SHOPPING ITEM METHODS *
@@ -89,6 +103,32 @@ class ShoppingListManager : NSObject {
      * * * * * * * * * * * * *
      */
     
+    /**
+    Get all ShoppingItems that belong to a list
+      - Parameters:
+          - autoID : autoID of shoppingList (parent of shoppingItems)
+     */
+    func getShoppingItems(autoID : String, completion: @escaping ([ShoppingItem]) -> Void) {
+        self.ref?.child("items").child(autoID).observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
+            var items : [ShoppingItem] = []
+            if let dict = snapshot.value as? NSDictionary {
+                for (_,v) in dict{
+                    let newItem = ShoppingItem()
+                    if let attr = v as? NSDictionary{
+                        if let content = attr["content"] as? String { newItem.content = content }
+                        if let creationDate = attr["creationDate"] as? String { newItem.creationDate = Utilities.stringToDate(creationDate) }
+                        if let dateModified = attr["dateModified"] as? String { newItem.dateModified = Utilities.stringToDate(dateModified) }
+                        if let isCompleted = (attr["isCompleted"] as? NSString) { newItem.isCompleted = isCompleted.boolValue }
+                        if let ID = (attr["autoID"] as? NSString) { newItem.autoID = ID as String }
+                        if let parentAutoID = (attr["parentAutoID"] as? NSString) { newItem.parentAutoID = parentAutoID as String }
+                    }
+                    items.append(newItem)
+                }
+            }
+            completion(items)
+        })
+    }
+
     
     /**
     Adds a ShoppingItem to Firebase db
@@ -174,13 +214,7 @@ class ShoppingListManager : NSObject {
                 print("Successfully deleted user's email from database." )
             }
         }
-        self.ref!.removeValue { error, _ in
-            if let err = error {
-                print(err.localizedDescription)
-            } else {
-                print("Successfully deleted user's information from database")
-            }
-        }
+       deleteAllShoppingLists()
     }
     
     

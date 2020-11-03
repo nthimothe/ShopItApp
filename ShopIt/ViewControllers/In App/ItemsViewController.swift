@@ -21,6 +21,7 @@ class ItemsViewController: UITableViewController, UserEditable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = controllerTitle
         ref = ShoppingListManager.sharedManager.ref
         //loadData()
         observeAddition()
@@ -32,6 +33,7 @@ class ItemsViewController: UITableViewController, UserEditable {
     func observeAddition(){
         self.ref?.child("items").child(itemsParentID).observe(DataEventType.childAdded, with: { (snapshot) in
             if let dict = snapshot.value as? NSDictionary {
+                print("(Addition) Received: \(dict)")
                 let newItem = ShoppingItem()
                 // safely unwrap
                 if let parentAutoID = dict["parentAutoID"] as? String { newItem.parentAutoID = parentAutoID }
@@ -40,10 +42,11 @@ class ItemsViewController: UITableViewController, UserEditable {
                     return other.autoID == newItem.autoID && other.parentAutoID == newItem.parentAutoID
                 }
                 if !containsItem{
+                    print("Adding: \(dict)")
                     // set the rest of the fields of newItem
                     if let content = dict["content"] as? String { newItem.content = content }
-                    if let creationDate = dict["creationDate"] as? String { newItem.creationDate = self.stringToDate(creationDate) }
-                    if let dateModified = dict["dateModified"] as? String { newItem.dateModified = self.stringToDate(dateModified) }
+                    if let creationDate = dict["creationDate"] as? String { newItem.creationDate = Utilities.stringToDate(creationDate) }
+                    if let dateModified = dict["dateModified"] as? String { newItem.dateModified = Utilities.stringToDate(dateModified) }
                     if let isCompleted = (dict["isCompleted"] as? NSString) { newItem.isCompleted = isCompleted.boolValue }
                     // add item to self.items, and add to tableView
                     self.items.insert(newItem, at: 0)
@@ -51,30 +54,26 @@ class ItemsViewController: UITableViewController, UserEditable {
                     self.tableView.insertRows(at: [indexPath], with: .fade)
                 }
             }
-            print("ITEMS ADDITION ENDDDD!!")
         })
     }
     
 
     func observeDeletion(){
-        print("DELETION")
         self.ref?.child("items").child(itemsParentID).observe(DataEventType.childRemoved, with: { (snapshot) in
             if let dict = snapshot.value as? NSDictionary {
-                print("DELETION DICT: \(dict)")
+                print("(Deletion) Received: \(dict)")
                 let newItem = ShoppingItem()
                 if let parentAutoID = dict["parentAutoID"] as? String { newItem.parentAutoID = parentAutoID }
                 if let autoID = dict["autoID"] as? String{ newItem.autoID = autoID }
-                print("ITEMS: \(self.items)")
                 for i in 0 ..< self.items.count{
-                    print("checking items in DELETION...")
                     let currItem = self.items[i]
                     if newItem == currItem{
+                        print("Removing: \(Utilities.formatDict(currItem.toDict()))")
                         // set the rest of the fields of newItem
                         if let content = dict["content"] as? String { newItem.content = content }
-                        if let creationDate = dict["creationDate"] as? String { newItem.creationDate = self.stringToDate(creationDate) }
-                        if let dateModified = dict["dateModified"] as? String { newItem.dateModified = self.stringToDate(dateModified) }
+                        if let creationDate = dict["creationDate"] as? String { newItem.creationDate = Utilities.stringToDate(creationDate) }
+                        if let dateModified = dict["dateModified"] as? String { newItem.dateModified = Utilities.stringToDate(dateModified) }
                         if let isCompleted = (dict["isCompleted"] as? NSString) { newItem.isCompleted = isCompleted.boolValue }
-                        print("DELETION: found the following to delete: \n\"\(newItem.dump_item())\"\n****")
                         // make changes to tableView
                         let indexPath = NSIndexPath(row: i, section: 0) as IndexPath
                         // make changes to self.items
@@ -89,52 +88,34 @@ class ItemsViewController: UITableViewController, UserEditable {
     
     
     func observeChange(){
-        print("CHANGE")
         self.ref?.child("items").child(itemsParentID).observe(DataEventType.childChanged, with: { (snapshot) in
             if let dict = snapshot.value as? NSDictionary {
-                print("CHANGE DICT: \(dict)")
+                print("(Change) Received: \(dict)")
                 let newItem = ShoppingItem()
                 if let parentAutoID = dict["parentAutoID"] as? String { newItem.parentAutoID = parentAutoID }
                 if let autoID = dict["autoID"] as? String{ newItem.autoID = autoID }
                 for i in 0 ..< self.items.count{
                     let item = self.items[i]
                     if item == newItem {
+                        print("Changing: \(Utilities.formatDict(item.toDict()))")
                         // set the rest of the fields of newItem
                         if let content = dict["content"] as? String { newItem.content = content }
-                        if let creationDate = dict["creationDate"] as? String { newItem.creationDate = self.stringToDate(creationDate) }
-                        if let dateModified = dict["dateModified"] as? String { newItem.dateModified = self.stringToDate(dateModified) }
+                        if let creationDate = dict["creationDate"] as? String { newItem.creationDate = Utilities.stringToDate(creationDate) }
+                        if let dateModified = dict["dateModified"] as? String { newItem.dateModified = Utilities.stringToDate(dateModified) }
                         if let isCompleted = (dict["isCompleted"] as? NSString) { newItem.isCompleted = isCompleted.boolValue }
-                        print("CHANGE!!!: found the following to change: \n\"\(newItem.dump_item())\"\n****")
                         // make changes to lists object
                         self.items[i] = item
                         // change tableView
                         let indexPath = NSIndexPath(row: i, section: 0) as IndexPath
                         let cell = self.tableView.cellForRow(at: indexPath)
+                        // reassign the text and accessory type of that cell
                         cell?.textLabel!.text = newItem.content
+                        cell?.accessoryType = newItem.isCompleted ? .checkmark : .none
                         break
                     }
                 }
             }
         })
-    }
-    
-    
-    
-    private func formatDate(_ date: Date) -> String {
-        // format the date object
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = Constants.General.DATE_FORMAT
-        return dateFormatter.string(from: date)
-    }
-    
-    
-    private func stringToDate(_ x : String) -> Date {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = Constants.General.DATE_FORMAT
-        var date = String(x).trimmingCharacters(in: .whitespacesAndNewlines)
-        date.removeFirst() // remove quotation
-        date.removeLast() // remove quotation
-        return dateFormatter.date(from: date)!
     }
     
     @IBAction func addWasPressed(_ sender: Any) {
@@ -181,7 +162,43 @@ class ItemsViewController: UITableViewController, UserEditable {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = items[indexPath.row].content
         cell.accessoryType = items[indexPath.row].isCompleted ? .checkmark : .none
+        let gestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longPress(_:)))
+        cell.addGestureRecognizer(gestureRecognizer)
         return cell
+    }
+    
+    @objc func longPress(_ sender: UILongPressGestureRecognizer) {
+        if sender.state == .began {
+            // it was touched at this point in the view
+            let touchPoint = sender.location(in: self.view)
+            let indexPath = self.tableView.indexPathForRow(at: touchPoint)
+            if indexPath != nil{
+                // unwrap sender.view and superview
+                guard let gestureView = sender.view, let superView = gestureView.superview else {
+                    return
+                }
+                let menuController = UIMenuController.shared
+                print("sender view: \(String(describing: sender.view))")
+                print("can it become first responder? \(String(describing: sender.view?.canBecomeFirstResponder))")
+                guard gestureView.canBecomeFirstResponder else {
+                    return
+                }
+                // becomes first responder in its window
+                gestureView.becomeFirstResponder()
+                
+                // configure menu items
+                let copyItemitle = NSLocalizedString("Copy", comment: "Copy this item name")
+                let copyAction = #selector(UITableViewCell.copyToClipboard(_:))
+                let copyItem = UIMenuItem(title: copyItemitle, action: copyAction)
+                
+                // configure shared menu controller
+                menuController.menuItems = [copyItem]
+                
+                // show menu
+                menuController.showMenu(from: superView, rect: gestureView.frame)
+            }
+            
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -197,7 +214,6 @@ class ItemsViewController: UITableViewController, UserEditable {
         cell?.accessoryType = cell?.accessoryType == .checkmark ? .none : .checkmark
         // write to db
         ShoppingListManager.sharedManager.markItem(item: item)
-        print("Item is now marked completed: \(item.isCompleted)")
     }
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -223,7 +239,7 @@ class ItemsViewController: UITableViewController, UserEditable {
             let alert = UIAlertController(title: "Rename Item", message: "", preferredStyle: .alert)
             alert.addTextField { (textField) in
                 textField.addTarget(self, action: #selector(self.textChanged(_:)), for: .editingChanged)
-                textField.placeholder = "New Item Name"
+                textField.text = self.items[indexPath.row].content
             }
             // cancel action
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
