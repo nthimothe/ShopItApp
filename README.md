@@ -1,6 +1,6 @@
 # ShopIt
 
-Simple iOS app (meant for iPhone 8+) using Google Firebase that allows for maintenance of quotidian shopping lists.
+Simple iOS app (meant for iPhone X+) using Google Firebase that allows for maintenance of quotidian shopping lists.
 
 ## Running the App
 
