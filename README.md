@@ -13,4 +13,5 @@ ShopIt can be opened in Xcode and deployed to an iOS device just like an other a
 
 ## Screenshots
 
-
+<img src="Screenshots/login.png" width="400"> <img src="Screenshots/lists.png" width="400">
+<img src="Screenshots/sunday_list.png" width="400"> <img src="Screenshots/account.png" width="400">
