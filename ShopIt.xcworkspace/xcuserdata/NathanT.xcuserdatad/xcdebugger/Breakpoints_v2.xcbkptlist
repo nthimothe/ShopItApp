@@ -142,8 +142,8 @@
             filePath = "ShopIt/ShoppingListManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "getShoppingItems(autoID:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -270,8 +270,8 @@
             filePath = "ShopIt/ShoppingListManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "getShoppingItems(autoID:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -286,9 +286,230 @@
             filePath = "ShopIt/ShoppingListManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
             landmarkName = "getShoppingItems(autoID:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4E1401DB-11A4-4E0B-857D-3CC12E0EF8FE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShopIt/ShoppingListManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "init()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E24F7CC6-1EB9-482B-AACD-02F72297B888"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShopIt/ShoppingListManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "init()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D8ECB789-9B12-4568-8E0F-55A421FA67D8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShopIt/ShoppingListManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "ShoppingListManager"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "D8ECB789-9B12-4568-8E0F-55A421FA67D8 - 8af28394a5fa0e92"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "globalinit_33_626CA6D1FC432DC22B686F60943842E5_func0"
+                  moduleName = "ShopIt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/NathanT/PublicProjects/ShopItApp/ShopIt/ShoppingListManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "11">
+               </Location>
+               <Location
+                  uuid = "D8ECB789-9B12-4568-8E0F-55A421FA67D8 - 7bdc6bb40d4b6cd1"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ShopIt.ShoppingListManager.sharedManager.unsafeMutableAddressor : ShopIt.ShoppingListManager"
+                  moduleName = "ShopIt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/NathanT/PublicProjects/ShopItApp/ShopIt/ShoppingListManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "D8ECB789-9B12-4568-8E0F-55A421FA67D8 - c87ff0be55e51698"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static ShopIt.ShoppingListManager.sharedManager.getter : ShopIt.ShoppingListManager"
+                  moduleName = "ShopIt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/NathanT/PublicProjects/ShopItApp/ShopIt/ShoppingListManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "55">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FEB0D782-EF6B-49C7-8121-0D08D97E5AC2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShopIt/ShoppingListManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "ShoppingListManager"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "FEB0D782-EF6B-49C7-8121-0D08D97E5AC2 - 15a9990d5c76fa8f"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ShopIt.ShoppingListManager.ref.getter : Swift.Optional&lt;__C.FIRDatabaseReference&gt;"
+                  moduleName = "ShopIt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/NathanT/PublicProjects/ShopItApp/ShopIt/ShoppingListManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "126">
+               </Location>
+               <Location
+                  uuid = "FEB0D782-EF6B-49C7-8121-0D08D97E5AC2 - d18b819380813a83"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ShopIt.ShoppingListManager.ref.setter : Swift.Optional&lt;__C.FIRDatabaseReference&gt;"
+                  moduleName = "ShopIt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/NathanT/PublicProjects/ShopItApp/ShopIt/ShoppingListManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "160">
+               </Location>
+               <Location
+                  uuid = "FEB0D782-EF6B-49C7-8121-0D08D97E5AC2 - e3d0692d4ca67af0"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ShopIt.ShoppingListManager.ref.modify : Swift.Optional&lt;__C.FIRDatabaseReference&gt;"
+                  moduleName = "ShopIt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/NathanT/PublicProjects/ShopItApp/ShopIt/ShoppingListManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "FEB0D782-EF6B-49C7-8121-0D08D97E5AC2 - fc404d026691b9d0"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ShopIt.ShoppingListManager.ref.modify : Swift.Optional&lt;__C.FIRDatabaseReference&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "ShopIt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/NathanT/PublicProjects/ShopItApp/ShopIt/ShoppingListManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "50DD2773-245C-4937-84C6-0FCCBF9F7173"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShopIt/ShoppingListManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "init()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8FEC0D14-A2C1-4C9B-B25B-D71AAAF04244"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShopIt/ShoppingListManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "resetRef()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EE08AC16-0CA2-446F-AC45-7E968DC10F60"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShopIt/ShoppingListManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "resetRef()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

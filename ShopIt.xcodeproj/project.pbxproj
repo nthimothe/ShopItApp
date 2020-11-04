@@ -25,7 +25,6 @@
 		1CD2218D2430258800312324 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CD2218C2430258800312324 /* Assets.xcassets */; };
 		1CD221902430258800312324 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CD2218E2430258800312324 /* LaunchScreen.storyboard */; };
 		1CD221AB2430269A00312324 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD221A32430269900312324 /* EmailViewController.swift */; };
-		1CD221AC2430269A00312324 /* UsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD221A42430269900312324 /* UsernameViewController.swift */; };
 		1CD221AD2430269A00312324 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD221A52430269900312324 /* LoginViewController.swift */; };
 		1CD221AE2430269A00312324 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD221A62430269A00312324 /* PasswordViewController.swift */; };
 		1CD221C22430547D00312324 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD221C12430547D00312324 /* ForgotPasswordViewController.swift */; };
@@ -71,7 +70,6 @@
 		1CD2218F2430258800312324 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1CD221912430258800312324 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1CD221A32430269900312324 /* EmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
-		1CD221A42430269900312324 /* UsernameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsernameViewController.swift; sourceTree = "<group>"; };
 		1CD221A52430269900312324 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1CD221A62430269A00312324 /* PasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		1CD221C12430547D00312324 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
@@ -135,7 +133,6 @@
 			isa = PBXGroup;
 			children = (
 				1CD221A32430269900312324 /* EmailViewController.swift */,
-				1CD221A42430269900312324 /* UsernameViewController.swift */,
 				1CD221A62430269A00312324 /* PasswordViewController.swift */,
 			);
 			path = "Sign Up";
@@ -344,7 +341,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CD221882430258700312324 /* ViewController.swift in Sources */,
-				1CD221AC2430269A00312324 /* UsernameViewController.swift in Sources */,
 				1C3B847E2460FB0300A78DC8 /* Protocols.swift in Sources */,
 				1C648C2924332E1D000588D2 /* ListsViewController.swift in Sources */,
 				1CE47ADC244294ED00C44A07 /* AboutViewController.swift in Sources */,

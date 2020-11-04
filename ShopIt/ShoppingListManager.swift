@@ -15,8 +15,15 @@ class ShoppingListManager : NSObject {
     static let sharedManager = ShoppingListManager()
     var ref : DatabaseReference?
     
+    
     private override init() {
         super.init()
+        let user = Auth.auth().currentUser
+        ref = Database.database().reference().child("users").child(user!.uid)
+    }
+    
+    func resetRef() {
+        ref = nil
         let user = Auth.auth().currentUser
         ref = Database.database().reference().child("users").child(user!.uid)
     }

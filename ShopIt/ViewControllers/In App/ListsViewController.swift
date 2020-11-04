@@ -43,6 +43,7 @@ class ListsViewController: UITableViewController, UserEditable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ShoppingListManager.sharedManager.resetRef()
         // ref to database
         ref = ShoppingListManager.sharedManager.ref
         //loadData()
