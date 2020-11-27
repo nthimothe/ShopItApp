@@ -170,7 +170,7 @@ class ListsViewController: UITableViewController, UserEditable {
     
     @IBAction func deleteAllWasPressed(_ sender: Any) {
         // present alert asking user if they are sure
-        let alert = UIAlertController(title: "Are you sure that you want to delete all shopping lists? This action will delete all your shoppping items too.", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Are you sure that you want to delete all shopping lists? This action will delete all your shopping items too.", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (action) in
 ShoppingListManager.sharedManager.deleteAllShoppingLists()
