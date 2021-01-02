@@ -10,10 +10,12 @@ import Foundation
 import UIKit
 class Stylist{
     /**
-     Styles a button according to given parameters.
+     Styles a button according to given parameters and rounds it.
      - Parameters:
         - button : the button to be styled
         - color : background color to be set
+        - titleColor : title color to be set
+        - borderColor : border color to be set
      */
     static func style(button: UIButton, color: UIColor, titleColor: UIColor, borderColor: CGColor){
         button.layer.borderWidth = 1
